@@ -7,19 +7,28 @@
 go get github.com/meownoid/stempl
 ```
 
-### Examples
+### Example
 ```go
-result, err = stempl.Format(
-    "The {{quick}} {brown} {fox} jumps over the lazy {dog}",
-    map[string]string{
-        "brown": "gray",
-        "fox": "cat",
-        "dog": "owl",
-    },
+package main
+
+import (
+	"fmt"
+	"github.com/meownoid/stempl"
 )
-if err != nil {
-    panic(err)
+
+func main() {
+	result, err := stempl.Format(
+		"The {{quick}} {brown} {fox} jumps over the lazy {dog}",
+		map[string]string{
+			"brown": "gray",
+			"fox": "cat",
+			"dog": "owl",
+		},
+	)
+	if err != nil {
+		panic(err)
+	}
+	// The {quick} gray cat jumps over the lazy owl
+	fmt.Println(result)
 }
-// The {quick} gray cat jumps over the lazy owl
-fmt.Println(result)
 ```
