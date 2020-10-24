@@ -1,9 +1,9 @@
-# stempl – Simple Templates
+# stempl
 
-`stempl` implements simple and fast named formatting.
+`stempl` implements simple and fast named formatting in Go programming language.
 
 ### Installation
-```bash
+```shell script
 go get github.com/meownoid/stempl
 ```
 
