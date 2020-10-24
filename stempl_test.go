@@ -16,16 +16,16 @@ func TestTemplate(t *testing.T) {
 		t.Fail()
 	}
 
-	result, err = Format("something strange hapenning", map[string]string{})
+	result, err = Format("something strange happening", map[string]string{})
 	if err != nil {
 		t.Fail()
 	}
-	if result != "something strange hapenning" {
+	if result != "something strange happening" {
 		t.Fail()
 	}
 
 	result, err = Format(
-		"something {strange} hapenning",
+		"something {strange} happening",
 		map[string]string{
 			"strange": "good",
 		},
@@ -33,7 +33,7 @@ func TestTemplate(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	if result != "something good hapenning" {
+	if result != "something good happening" {
 		t.Error(result)
 	}
 
